@@ -1,4 +1,4 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import localFont from 'next/font/local';
@@ -31,6 +31,11 @@ export const metadata: Metadata = {
   title: "Dress Up Closet",
   description: "Game to create outfits from the clothes in your closet",
 };
+
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1.0,
+} 
 
 export default function RootLayout({
   children,
