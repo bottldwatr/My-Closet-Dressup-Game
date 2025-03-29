@@ -1,4 +1,4 @@
-export default function Carousel() {
+export default function ClothingCategories() {
     return (
         <div className="p-5 box-border flex flex-row gap-5 bg-green-300">
             <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
