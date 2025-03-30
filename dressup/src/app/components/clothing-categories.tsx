@@ -1,41 +1,62 @@
+'use client';
+
+import { useState } from "react"
+
 export default function ClothingCategories() {
+    const [currCategory, setCurrCategory] = useState<string>("Shirt");
+
+    const categories: string[] = [
+        "Shirt",
+        "Overshirt",
+        "Outerwear",
+        "Pants",
+        "Belt",
+        "Skirt",
+        "Shoes",
+        "Socks",
+        "Accessory 1",
+        "Accessory 2",
+        "Accessory 3",
+        "Accessory 4",
+        "Accessory 5",
+    ]
+
+    const styling:string = `
+        min-h-10
+        min-w-18
+        bg-red-500 
+        flex 
+        items-center 
+        justify-center 
+        hover:bg-red-600 
+        focus:outline-2
+        focus:outline-offset-2
+        focus:outline-red-500
+        active:scale-x-95
+        active:scale-y-95
+        `
+    
     return (
-        <div className="p-5 box-border flex flex-row gap-5 bg-green-300">
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Shirt</p>
+        <div>
+            <div className="min-w-max flex items-center">
+                <div className="p-3 size-5 bg-black"></div>
+                <div className="p-3 box-border max-w-108 flex flex-row gap-3 bg-green-100 overflow-hidden">
+                    {
+                        categories.map((category, i) => (
+                            <button onClick={() => setCurrCategory(category)} type="button" key={i} className={styling}>
+                                <p>{category}</p>
+                            </button>
+                        ))
+                    }
+                </div>
+                <div className="size-5 bg-black"></div>
             </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Overshirt</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Jacket/Jumper</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Pants</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Skirt</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Shoes</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Socks</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Accessory 1</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Accessory 2</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Accessory 3</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Accessory 4</p>
-            </div>
-            <div className="lg:w-18 lg:h-18 bg-red-500 flex items-center justify-center">
-                <p>Accessory 5</p>
+            <div className="flex justify-center">
+                {
+                    categories.map((i) => (
+                        <input key={categories.length + i} name="categories" type="radio"/>
+                    ))
+                }
             </div>
         </div>
     )
