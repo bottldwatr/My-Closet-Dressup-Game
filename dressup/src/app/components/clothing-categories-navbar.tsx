@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from "react"
+import { useState, useEffect } from "react"
 
 export default function ClothingCategoriesNavbar() {
     const categories: string[] = [
@@ -86,11 +86,15 @@ export default function ClothingCategoriesNavbar() {
         }
     }
 
+    useEffect(() => {
+        document.getElementById("categorySection")!.scrollLeft = (currIndex - 3) * 80
+    }, [currCategory, currIndex])
+
     return (
         <div>
             <div className="min-w-max flex items-center">
                 <button onClick={() => {leftButtonClickCategories()}} className={arrowStyling}></button>
-                <div className="p-2 box-border max-w-106 flex flex-row gap-3 overflow-y-scroll smooth-scroll no-scrollbar snap-x">
+                <div id="categorySection" className="p-2 box-border max-w-148 flex flex-row gap-3 overflow-y-scroll smooth-scroll no-scrollbar snap-x">
                     {
                         categories.map((category, i) => (
                             <button 
