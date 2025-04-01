@@ -31,6 +31,8 @@ export default function ClothingCategoriesNavbar() {
     `
 
     const currentCategoryStyling:string = `
+        text-base
+        min-h-10
         min-w-18
         bg-red-500 
         flex 
@@ -46,6 +48,7 @@ export default function ClothingCategoriesNavbar() {
     `
 
     const categoryStyling:string = `
+        text-sm md:text-base
         min-h-10
         min-w-18
         bg-red-500 
@@ -94,7 +97,7 @@ export default function ClothingCategoriesNavbar() {
         <div>
             <div className="min-w-max flex items-center">
                 <button onClick={() => {leftButtonClickCategories()}} className={arrowStyling}></button>
-                <div id="categorySection" className="p-2 box-border max-w-148 flex flex-row gap-3 overflow-y-scroll smooth-scroll no-scrollbar snap-x">
+                <div id="categorySection" className="p-2 box-border max-w-64 sm:max-w-106 md:max-w-148 flex bg-cyan-500 flex-row gap-3 overflow-y-scroll smooth-scroll no-scrollbar snap-x">
                     {
                         categories.map((category, i) => (
                             <button 
