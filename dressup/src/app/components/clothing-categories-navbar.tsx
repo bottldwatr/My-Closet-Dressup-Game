@@ -31,7 +31,6 @@ export default function ClothingCategoriesNavbar() {
     `
 
     const currentCategoryStyling:string = `
-        text-base
         min-h-10
         min-w-18
         bg-red-500 
@@ -48,7 +47,6 @@ export default function ClothingCategoriesNavbar() {
     `
 
     const categoryStyling:string = `
-        text-sm md:text-base
         min-h-10
         min-w-18
         bg-red-500 
