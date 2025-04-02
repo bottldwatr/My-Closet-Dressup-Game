@@ -88,7 +88,15 @@ export default function ClothingCategoriesNavbar() {
     }
 
     useEffect(() => {
-        document.getElementById("categorySection")!.scrollLeft = (currIndex - 3) * 80
+        if (window.innerWidth < 768 && window.innerWidth > 639) {
+            document.getElementById("categorySection")!.scrollLeft = (currIndex - 2) * 80
+        }
+        else if (window.innerWidth < 640) {
+            document.getElementById("categorySection")!.scrollLeft = (currIndex - 1) * 80
+        }
+        else {
+            document.getElementById("categorySection")!.scrollLeft = (currIndex - 3) * 80
+        }
     }, [currCategory, currIndex])
 
     return (
