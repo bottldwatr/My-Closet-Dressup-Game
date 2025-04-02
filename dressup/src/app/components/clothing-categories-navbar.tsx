@@ -88,11 +88,11 @@ export default function ClothingCategoriesNavbar() {
     }
 
     useEffect(() => {
-        if (window.innerWidth < 768 && window.innerWidth > 639) {
-            document.getElementById("categorySection")!.scrollLeft = (currIndex - 2) * 80
-        }
-        else if (window.innerWidth < 640) {
+        if (window.innerWidth < 640) {
             document.getElementById("categorySection")!.scrollLeft = (currIndex - 1) * 80
+        }
+        else if (window.innerWidth < 768 && window.innerWidth > 639) {
+            document.getElementById("categorySection")!.scrollLeft = (currIndex - 2) * 80
         }
         else {
             document.getElementById("categorySection")!.scrollLeft = (currIndex - 3) * 80
